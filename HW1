@@ -1,0 +1,61 @@
+#Задача 1
+##имеющийся код
+install.packages("knitr")
+library(knitr)
+kable(
+  +     data.frame(
+    +         name=c("John", "Jack", "Kevin", "Weigu"),
+    +         reg_number=c(11,12,8,3),
+    +         country=c("USA", "USA", "UK", "China"),
+    +         place=c(2,3,1,4),
+    +         time=c(10.5, 11.5, 8.3, 13.2)
+  )
+)
+##создание таблицы
+name<-c("John", "Jack", "Kevin", "Weigu")
+reg_number<-c(11,12,8,3)
+country<-c("USA", "USA", "UK", "China")
+place<-c(2,3,1,4)
+time<-c(10.5, 11.5, 8.3, 13.2)
+kable(data.frame(name,reg_number,country,place,time))
+
+#Задача2
+##задаем последовательность
+a<-1
+d<-2
+for (i in 2:152){
+a[i]<-a[i-1]+d
+}
+a
+##задаем вектор в обратном порядке
+c<-c(a[152:1])
+X<-c
+##исключаем из вектора числа, которые делятся на 4 без остатка
+X[X%%4>0]
+
+#Задача3
+c<-c(1:100)
+c
+c^2  
+b<-c^2 
+b
+b[b%%2>0]
+s<-b[b%%2>0]
+s
+g<-setdiff(b, s)
+g
+
+#Задача4
+data<-read.csv("~/Downloads/nanai-vowels.csv", sep = ";", header = TRUE)
+View(data)
+f1<-data$f1
+f2<-data$f2 
+f<-f1-f2
+mean(f)
+##[1] -1499.916
+sd(f)
+##[1] 708.1082
+hist(f)
+boxplot(data$f1)
+boxplot(data$f2)
+boxplot(f)
